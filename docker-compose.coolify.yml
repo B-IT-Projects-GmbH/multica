@@ -56,7 +56,7 @@ services:
       CLOUDFRONT_DOMAIN: ${CLOUDFRONT_DOMAIN:-}
       CLOUDFRONT_KEY_PAIR_ID: ${CLOUDFRONT_KEY_PAIR_ID:-}
       CLOUDFRONT_PRIVATE_KEY: ${CLOUDFRONT_PRIVATE_KEY:-}
-    expose:
+    ports:
       - "8080"
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost:8080/health"]
@@ -80,7 +80,7 @@ services:
       SERVICE_FQDN_FRONTEND_3000: /
       HOSTNAME: "0.0.0.0"
       PORT: "3000"
-    expose:
+    ports:
       - "3000"
 
 volumes:
